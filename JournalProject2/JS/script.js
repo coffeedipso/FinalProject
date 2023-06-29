@@ -11,9 +11,7 @@ Student.forEach((st) => {
 	let line = document.createElement("div");
 	line.classList.add("line");
 	let STname = document.createElement("div");
-	//	STname.classList.add("name");
 	STname.textContent = st;
-	//line.appendChild(STname);
 	STname.classList.add("line");
 	students.appendChild(STname);
 
@@ -109,18 +107,6 @@ blocks2.forEach((block) => {
 });
 
 
-// let blocks = document.querySelectorAll("input");
-// blocks.forEach((block) => {
-// 	block.addEventListener("keydown", (e) => {
-// 		if (e.code.includes("Arrow")) {
-// 			e.preventDefault();
-// 			if (block.value > 5 || block.value < 2 || isNaN(block.value)) {
-// 				block.value = "";
-// 			}
-// 		}
-// 	});
-// });
-
 let nextButton = document.getElementById("next-btn");
 let backButton = document.getElementById("back-btn");
 
@@ -172,38 +158,6 @@ function updateBlocksVisibility() {
 
 updateBlocksVisibility();
 
-
-
-// let linemark2 = document.querySelectorAll(".linemark");
-// let linemarkArray = Array.from(linemark2);
-
-// linemarkArray.forEach((linemark, i) => {
-// 	let marks = linemark.querySelectorAll("input");
-
-// 	//let averageElement = document.createElement("span");
-// 	//linemark.appendChild(averageElement);
-// 	let element = document.querySelectorAll('sr');
-// 	marks.forEach((mark) => {
-// 		mark.addEventListener("input", () => {
-// 			let sum = 0;
-// 			let count = 0;
-
-// 			marks.forEach((m) => {
-// 				if (m.value !== "") {
-// 					sum += parseFloat(m.value);
-// 					count++;
-// 				}
-// 			});
-
-// 			let average = count > 0 ? sum / count : 0;
-// 			let roundedNum = Number(average.toFixed(1));
-// 			element.textContent = `${roundedNum}`;
-// 			//averageElement.textContent = `${roundedNum}`;
-// 		});
-// 	});
-// });
-
-//let gradebook = document.querySelector(".gradebook");
 let aver2 = gradebook.querySelector(".aver");
 let sr = aver2.querySelector(".sr");
 

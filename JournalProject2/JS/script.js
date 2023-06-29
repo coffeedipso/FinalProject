@@ -74,8 +74,8 @@ timeForm.addEventListener("keydown", (e) => {
 });
 
 
-let blocks = marks.querySelectorAll("input");
-blocks.forEach((block) => {
+let blocks3 = marks.querySelectorAll("input");
+blocks3.forEach((block) => {
 	block.addEventListener("input", () => {
 		let value = parseInt(block.value);
 		if (value > 5 || value < 2 || isNaN(value) || value == 0) {
@@ -83,6 +83,20 @@ blocks.forEach((block) => {
 		}
 	});
 });
+
+let blocks = document.querySelectorAll("input");
+blocks.forEach((block) => {
+	block.addEventListener("keydown", (e) => {
+		if (e.code.includes("Arrow")) {
+			e.preventDefault();
+			if (block.value > 5 || block.value < 2 || isNaN(block.value)) {
+				block.value = "";
+			}
+		}
+	});
+});
+
+
 let dateline = document.querySelector(".dateline");
 let blocks2 = dateline.querySelectorAll("input");
 blocks2.forEach((block) => {
@@ -93,6 +107,7 @@ blocks2.forEach((block) => {
 		}
 	});
 });
+
 
 // let blocks = document.querySelectorAll("input");
 // blocks.forEach((block) => {

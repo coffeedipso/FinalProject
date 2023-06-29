@@ -159,31 +159,62 @@ updateBlocksVisibility();
 
 
 
-let linemark2 = document.querySelectorAll(".linemark");
-let linemarkArray = Array.from(linemark2);
+// let linemark2 = document.querySelectorAll(".linemark");
+// let linemarkArray = Array.from(linemark2);
+
+// linemarkArray.forEach((linemark, i) => {
+// 	let marks = linemark.querySelectorAll("input");
+
+// 	//let averageElement = document.createElement("span");
+// 	//linemark.appendChild(averageElement);
+// 	let element = document.querySelectorAll('sr');
+// 	marks.forEach((mark) => {
+// 		mark.addEventListener("input", () => {
+// 			let sum = 0;
+// 			let count = 0;
+
+// 			marks.forEach((m) => {
+// 				if (m.value !== "") {
+// 					sum += parseFloat(m.value);
+// 					count++;
+// 				}
+// 			});
+
+// 			let average = count > 0 ? sum / count : 0;
+// 			let roundedNum = Number(average.toFixed(1));
+// 			element.textContent = `${roundedNum}`;
+// 			//averageElement.textContent = `${roundedNum}`;
+// 		});
+// 	});
+// });
+
+//let gradebook = document.querySelector(".gradebook");
+let aver2 = gradebook.querySelector(".aver");
+let sr = aver2.querySelector(".sr");
+
+let linemarkArray = Array.from(document.querySelectorAll(".linemark"));
 
 linemarkArray.forEach((linemark, i) => {
 	let marks = linemark.querySelectorAll("input");
-
-	let averageElement = document.createElement("span");
-	linemark.appendChild(averageElement);
 
 	marks.forEach((mark) => {
 		mark.addEventListener("input", () => {
 			let sum = 0;
 			let count = 0;
 
-			marks.forEach((m) => {
-				if (m.value !== "") {
-					sum += parseFloat(m.value);
-					count++;
-				}
+			linemarkArray.forEach((lm) => {
+				let lmMarks = lm.querySelectorAll("input");
+				lmMarks.forEach((m) => {
+					if (m.value !== "") {
+						sum += parseFloat(m.value);
+						count++;
+					}
+				});
 			});
 
 			let average = count > 0 ? sum / count : 0;
 			let roundedNum = Number(average.toFixed(1));
-
-			averageElement.textContent = `${roundedNum}`;
+			sr.textContent = `${roundedNum}`;
 		});
 	});
 });
